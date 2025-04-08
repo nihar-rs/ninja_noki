@@ -13,7 +13,7 @@ for file in $files; do
 done
 
 echo "Compiling Java files..."
-javac -d $BIN_DIR ~/Opt/ninja_noki/*.java
+javac -d $BIN_DIR ~/Opt/ninja_noki/src/*.java
 
 # exit_success_check: 
 if [ $? -eq 0 ]; then
