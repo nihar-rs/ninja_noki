@@ -1,11 +1,11 @@
-package src;
+package src.main;
 
 import javax.swing.JFrame;
 
-public class Window {
+public class GameWindow {
   private JFrame jFrame;
 
-  public Window(Panel gamePanel) {
+  public GameWindow(GamePanel gamePanel) {
     jFrame = new JFrame();
     jFrame.setSize(1280, 720);
     jFrame.setResizable(false);

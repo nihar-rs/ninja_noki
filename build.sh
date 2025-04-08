@@ -3,11 +3,11 @@
 # Set variables
 SRC_DIR="ninja_noki/src"
 BIN_DIR="bin"
-MAIN_CLASS="src.Main" 
+MAIN_CLASS="src.main.Main" 
 mkdir -p $BIN_DIR
 
 echo "Compiling Java files from $SRC_DIR to $BIN_DIR..."
-javac -d $BIN_DIR ~/Opt/ninja_noki/src/*.java
+javac -d $BIN_DIR ~/Opt/ninja_noki/src/main/*.java
 
 # exit_success_check: 
 if [ $? -eq 0 ]; then
