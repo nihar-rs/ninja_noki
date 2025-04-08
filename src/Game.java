@@ -1,3 +1,5 @@
+package src;
+
 public class Game {
   private Window gameWindow;
   private Panel gamePanel;

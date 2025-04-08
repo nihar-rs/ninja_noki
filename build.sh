@@ -1,18 +1,12 @@
 #!/bin/bash
 
 # Set variables
-# SRC_DIR="src"
+SRC_DIR="ninja_noki/src"
 BIN_DIR="bin"
-MAIN_CLASS="Main"  # Change this to your actual main class
-
+MAIN_CLASS="src.Main" 
 mkdir -p $BIN_DIR
-# clean:
-files=$(find . -maxdepth 1 -type f -name "*.class")
-for file in $files; do
-  rm "$file"
-done
 
-echo "Compiling Java files..."
+echo "Compiling Java files from $SRC_DIR to $BIN_DIR..."
 javac -d $BIN_DIR ~/Opt/ninja_noki/src/*.java
 
 # exit_success_check: 
@@ -27,3 +21,4 @@ fi
 
 # package-build:
 # javac -d . $(pwd)/*.java
+
