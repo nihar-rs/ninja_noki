@@ -3,14 +3,13 @@ package src.entities;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import javax.imageio.ImageIO;
-
+import src.utils.LoadSave;
 import src.utils.Constants.PlayerConstants;
 
 public class Player extends Entity {
   private BufferedImage[][] animations;
   private BufferedImage image;
-  private int animationTick, animationIndex, animationSpeed = 30;
+  private int animationTick, animationIndex, animationSpeed = 60;
   private int playerAction = PlayerConstants.IDLE;
   private boolean isMoving = false, isAttacking = false;
   private boolean left, up, right, down;
@@ -28,9 +27,7 @@ public class Player extends Entity {
   }
 
   public void render(Graphics graphics) {
-    if (image != null) {
-      graphics.drawImage(animations[playerAction][animationIndex], (int) x, (int) y, 128, 80, null);
-    }
+    graphics.drawImage(animations[playerAction][animationIndex], (int) x, (int) y, 64, 40, null);
   }
 
   private void updateAnimationTick() {
@@ -89,12 +86,8 @@ public class Player extends Entity {
   }
 
   private void loadAnimations() {
+    BufferedImage image = LoadSave.getSpriteAtlas(LoadSave.PLAYER_ATLAS);
 
-    try {
-      image = ImageIO.read(getClass().getResource("../images/player_sprites.png"));
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
     animations = new BufferedImage[9][6];
     for (int i = 0; i < animations.length; i++) {
       for (int j = 0; j < animations[i].length; j++) {
