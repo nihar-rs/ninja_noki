@@ -1,6 +1,5 @@
 package src.levels;
 
-import static src.main.Game.SCALE;
 import static src.main.Game.TILES_SIZE;
 
 import java.awt.Graphics;
@@ -42,5 +41,9 @@ public class LevelManager {
 
   public void update() {
 
+  }
+
+  public Level getCurrentLevel() {
+    return levelOne;
   }
 }
