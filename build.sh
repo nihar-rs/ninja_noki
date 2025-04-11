@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-SRC_DIR="ninja_noki/src"
+SRC_DIR="src"
 BIN_DIR="bin"
 MAIN_CLASS="src.main.Main" 
 mkdir -p $BIN_DIR
@@ -13,7 +13,8 @@ javac -d $BIN_DIR ~/Opt/ninja_noki/src/main/*.java
 if [ $? -eq 0 ]; then
     echo "Compilation successful!"
     echo "Running $MAIN_CLASS..."
-    java -cp $BIN_DIR $MAIN_CLASS
+    # java -cp $BIN_DIR $MAIN_CLASS
+    java -cp "$BIN_DIR:resource/images/" "$MAIN_CLASS"
 else
     echo "Compilation failed!"
     exit 1
