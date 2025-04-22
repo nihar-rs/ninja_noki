@@ -20,9 +20,6 @@ else
     exit 1
 fi
 
-# After compiling Java files...
-cp -r resource/* bin/src/
-
 # package-build:
 # javac -d . $(pwd)/*.java
 
